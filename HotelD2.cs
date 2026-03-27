@@ -64,7 +64,7 @@ namespace HotelD2
             }
         }
 
-        // Method to cancel booking
+        // method to cancel booking
         public void CancelBooking()
         {
             if(nakaBooked)
@@ -77,10 +77,10 @@ namespace HotelD2
             }
         }
 
-        // Abstract method (implemented by derived classes) defines the room type
+        // abstract method (implemented by derived classes) defines the room type
         public abstract string DisplayRoomType();
 
-        // Virtual method it could be overriden
+        // virtual method it could be overriden
         public virtual void DisplayHotelInfo()
         {
             Console.WriteLine($"{DisplayRoomType()} | Room: {roomNumber} | Price: {price} | Available: {!nakaBooked} ");
@@ -185,7 +185,7 @@ namespace HotelD2
             while(pili!=5)
             {
                 Console.WriteLine("\n++Book a Hotel++");
-                Console.WriteLine("\t(1) Display Rooms");
+                Console.WriteLine("\t(1) All Rooms");
                 Console.WriteLine("\t(2) Book a Room");
                 Console.WriteLine("\t(3) Cancel Booking");
                 Console.WriteLine("\t(4) User Info");
@@ -324,7 +324,7 @@ namespace HotelD2
                             Console.WriteLine($"Address: {rooms[a].Address}");
                             Console.WriteLine($"Room Number: {rooms[a].RoomNumber}");
                             Console.WriteLine($"Room Type: {rooms[a].DisplayRoomType()}");
-                            Console.WriteLine($"Price: {rooms[a].Price}");
+                            Console.WriteLine($"Price: ${rooms[a].Price:f2}");
                             Console.WriteLine("--------------------------");
                         }                        
                     }
