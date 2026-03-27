@@ -35,7 +35,7 @@ namespace HotelD2
         public Room(int RoomNumber, double Price){
             roomNumber=RoomNumber;
             price=Price;
-            nakaBooked=false; // default:  if the availability is not booked
+            nakaBooked=false; // default: if the availability is not booked
         }
 
         // Static constructor (runs once when program starts)
@@ -138,7 +138,7 @@ namespace HotelD2
         }
     }
 
-    // Abstract Payment class (demonstrates abstraction)
+    // Abstract Payment class (Polymorphism)
     abstract class Payment
     {
         public abstract void Pay(double amount);
@@ -285,7 +285,7 @@ namespace HotelD2
                 // Cancel booking
                 else if(pili==3)
                 {
-                    Console.WriteLine("Enter Room Number to Cancel: ");
+                    Console.Write("Enter Room Number to Cancel: ");
                     int cancelRoom=Convert.ToInt32(Console.ReadLine());
 
                     bool found=false;
@@ -317,14 +317,16 @@ namespace HotelD2
                     {
                         if(rooms[a].NakaBooked)
                         {
+                            hasBooked = true;
                             Console.WriteLine("\n------------------------");
                             Console.WriteLine($"Name: {rooms[a].Name}");
                             Console.WriteLine($"Age: {rooms[a].Age}");
                             Console.WriteLine($"Address: {rooms[a].Address}");
                             Console.WriteLine($"Room Number: {rooms[a].RoomNumber}");
                             Console.WriteLine($"Room Type: {rooms[a].DisplayRoomType()}");
-                            hasBooked = true;
-                        }
+                            Console.WriteLine($"Price: {rooms[a].Price}");
+                            Console.WriteLine("--------------------------");
+                        }                        
                     }
 
                     if(!hasBooked)
