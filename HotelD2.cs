@@ -180,7 +180,7 @@ namespace HotelD2
             rooms[3]= new LayshoMoor(302,5500);
             rooms[4]= new DeluxeMoor(403,11000);
 
-            int pili=0; // user choice
+            var pili=0; // user choice
 
             // Main menu while loop
             while(pili!=5)
@@ -242,8 +242,8 @@ namespace HotelD2
                             Console.Write("Choose payment: ");
                             int payChoice=Convert.ToInt32(Console.ReadLine());
 
-                            Payment payment=null; //putting the payment object to null first meaning the variable is not yet assigned to any payment type
-                            string paymentType= "";
+                            Payment payment=null; //putting the payment object to null first (meaning the variable is not yet assigned to any payment type)
+                            string paymentType= ""; // to store the payment type for display purposes
 
                             // polymorphism in action
                             if(payChoice==1){
