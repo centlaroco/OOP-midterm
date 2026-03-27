@@ -2,7 +2,7 @@ using System;
 
 namespace HotelD2
 {
-    // Abstract base class 
+    // Abstract base class (the process of hiding certain details and showing only important information to the user)
     abstract class Room
     {
         // private fields (encapsulation)
@@ -173,7 +173,8 @@ namespace HotelD2
             Room[] rooms=new Room[5];
 
             // initialize rooms with different types and prices
-            rooms[0]= new SkwaaMoor(101,500);
+            //each slot in the array is assigned to a specific room type with a unique room number and price
+            rooms[0]= new SkwaaMoor(101,500); 
             rooms[1]= new ChakaMoor(103,1000);
             rooms[2]= new NormalMoor(201,2500);
             rooms[3]= new LayshoMoor(302,5500);
@@ -241,7 +242,7 @@ namespace HotelD2
                             Console.Write("Choose payment: ");
                             int payChoice=Convert.ToInt32(Console.ReadLine());
 
-                            Payment payment=null;
+                            Payment payment=null; //putting the payment object to null first meaning the variable is not yet assigned to any payment type
                             string paymentType= "";
 
                             // polymorphism in action
@@ -265,7 +266,7 @@ namespace HotelD2
                             // Book the room
                             rooms[j].BookARoom();
 
-                            // Process payment
+                            // Process payment if payment is not null or if the user has selected a valid payment method
                             if(payment!=null){
                                 Console.WriteLine($"Payment: {paymentType}");
                                 payment.Pay(rooms[j].Price);
